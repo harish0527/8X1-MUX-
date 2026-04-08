@@ -1,0 +1,18 @@
+module mux_tb;
+reg [7:0]a;
+reg [2:0]s;
+wire y;
+
+fmux f1(y,a,s);
+
+initial 
+begin
+a=8'd6;s=3'd3;
+#10 a=8'd3;s=3'd2;
+#10 a=8'd4;s=3'd6;
+#10a=8'd2;s=3'd5;
+$finish;
+end
+initial
+$monitor("a=%d,s=%d,y=%d",a,s,y);
+endmodule
